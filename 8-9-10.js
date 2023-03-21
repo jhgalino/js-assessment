@@ -1,5 +1,8 @@
 // 8
 function sanitize (string) {
+  if (typeof string !== 'string') {
+    throw Error('argument must be string');
+  }
   return string.replaceAll(' ', '');
 }
 
@@ -9,6 +12,9 @@ function sanitize (string) {
 
 // 9
 function isAnagram (firstStr, secondStr) {
+  if (typeof firstStr !== 'string' || typeof secondStr !== 'string') {
+    throw Error('arguments must be of type string');
+  }
   firstStr = sanitize(firstStr);
   secondStr = sanitize(secondStr);
 
@@ -46,6 +52,9 @@ function isAnagram (firstStr, secondStr) {
 
 // 10
 function isPalindrome (str) {
+  if (typeof str !== 'string') {
+    throw Error('argument must be string');
+  }
   str = sanitize(str.toLowerCase());
   return str === [...str].reverse().join('');
 }

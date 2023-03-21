@@ -28,21 +28,19 @@ function reverseArray (arr) {
 
 // 5
 function sortLowToHigh (arr) {
-  if (arr.every(item => typeof item === 'number')) {
-    const sorted = [...arr];
-    return sorted.sort((a, b) => a - b);
-  } else {
-    throw Error('function only accepts an array of numbers');
+  if (arr.some(item => typeof item !== 'number')) {
+    throw Error('argument has non-number elements');
   }
+  const sorted = [...arr];
+  return sorted.sort((a, b) => a - b);
 }
 
 // 6
 function filterNegative (arr) {
-  if (arr.every(item => typeof item === 'number')) {
-    return arr.filter(num => num > 0);
-  } else {
-    throw Error('function only accepts array of numbers');
+  if (arr.some(item => typeof item !== 'number')) {
+    throw Error('argument has non-number elements');
   }
+  return arr.filter(num => num > 0);
 }
 
 const test = generateRandom(25);
