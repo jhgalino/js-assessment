@@ -41,7 +41,7 @@ function sortLowToHigh (arr) {
 function filterNegative (arr) {
   return arr.filter(num => {
     if (typeof num !== 'number') {
-      throw Error('array has non-number element')
+      throw Error('array has non-number element');
     }
     return num > 0;
   });
